@@ -1,0 +1,16 @@
+services:
+  backend:
+    # image:node when you dont have a dockerfile
+    build: ./backend #you already have a dockerfile in backend
+    ports:
+      - 8000:5000
+  
+  frontend:
+    build: ./frontend
+    ports:
+      - 5173:5173
+    
+  redis:
+    image: redis #from docker hub
+    ports:
+      - 6379:6379
