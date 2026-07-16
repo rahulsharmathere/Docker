@@ -2,8 +2,14 @@ services:
   backend:
     # image:node when you dont have a dockerfile
     build: ./backend #you already have a dockerfile in backend
+    # environment:
+    #   - PORT=7000
+    
+    #for all env var:
+    env_file:
+      - ./backend/.env
     ports:
-      - 8000:5000
+      - 8000:7000
   
   frontend:
     build: ./frontend
